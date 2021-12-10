@@ -16,6 +16,7 @@ async function mostrarProductoMayor(){
     let mayorDepreciacion = [];
 	let response = await fetch("https://misiontic2022upb.vercel.app/api/logistics/products");
     let productosAPI = await response.json();
+    let contador = 0;
     let indice = 0;
     let max = 0;	
 
@@ -24,7 +25,7 @@ async function mostrarProductoMayor(){
 
         if(precioDepreciado > max){
             max = precioDepreciado;
-            indice = indice +  1;
+            indice = contador;
         }
 
         productosConDepreciacion.push({
@@ -34,8 +35,10 @@ async function mostrarProductoMayor(){
             "vidaUtil":e.vidaUtil,
             "periodo_consultado":e.periodo_consultado
         })
+        contador = contador +1;
     });
-    mayorDepreciacion.push(productosConDepreciacion[indice-1]);
+
+    mayorDepreciacion.push(productosConDepreciacion[indice]);
     return mayorDepreciacion;
 }
 
