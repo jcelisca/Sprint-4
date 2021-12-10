@@ -1,4 +1,4 @@
-const calcularDepreciacionNIIF = (precioInicial, precioFinal, vidaUtil, numeroPeriodoAconsultar) => {
+/*const calcularDepreciacionNIIF = (precioInicial, precioFinal, vidaUtil, numeroPeriodoAconsultar) => {
     if(vidaUtil<=0){
 		return 0;
 	}else if(numeroPeriodoAconsultar<0){
@@ -9,7 +9,7 @@ const calcularDepreciacionNIIF = (precioInicial, precioFinal, vidaUtil, numeroPe
         var precio=(precioFinal-precioInicial)*numeroPeriodoAconsultar/vidaUtil+precioInicial;
 	    return precio;
     }
-}
+}*/
 
 async function mostrarProductoMayor(){
     let productosConDepreciacion = [];
@@ -42,5 +42,5 @@ async function mostrarProductoMayor(){
     return mayorDepreciacion;
 }
 
-mostrarProductoMayor().then(console.log);
-//module.exports.mostrarProductoMayor = mostrarProductoMayor;
+//mostrarProductoMayor().then(console.log);
+module.exports.mostrarProductoMayor = mostrarProductoMayor;
